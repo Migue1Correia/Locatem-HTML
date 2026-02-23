@@ -1,0 +1,255 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.Loca {
+    margin-left: 20px; /* espaço entre logo e texto */
+    font-size: 22px;
+    font-weight: bold;
+    position: relative;
+}
+
+/* Linha amarela embaixo no nome */
+.Loca::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 4px;
+    background-color: var(--amarelo);
+    border-radius: 2px;
+}
+
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+
+
+/* VARIÁVEIS */
+:root {
+    --amarelo: #FFC107;
+    --preto: #000;
+    --cinza: #E0E0E0;
+    --cinza-escuro: #666;
+    --branco: #FFF;
+}
+
+/* BODY */
+body {
+    background-color: var(--branco);
+    padding: 0 30px;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+}
+
+header img.Logo {
+    width: 45px;
+}
+
+header h1 {
+    margin-left: 10px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+header button {
+    background-color: var(--preto);
+    color: var(--branco);
+    border: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+header button:last-child {
+    background-color: var(--amarelo);
+    color: var(--preto);
+    font-weight: bold;
+}
+
+/* CARROSSEL PRINCIPAL */
+.Card1 {
+    margin-top: 25px; 
+    /* Espaço acima do carrossel, separa ele do conteúdo anterior */
+
+    background-color: var(--cinza); 
+    /* Cor de fundo do carrossel */
+    height: 380px; 
+    /* Altura fixa do carrossel (define o tamanho visível) */
+    border-radius: 6px; 
+    /* Bordas arredondadas */
+    display: flex; 
+    /* Usa Flexbox para organizar o conteúdo interno */
+    align-items: center; 
+    /* Centraliza verticalmente o conteúdo dentro da Card1 */
+    justify-content: center; 
+    /* Centraliza horizontalmente o conteúdo */
+    color: var(--branco); 
+    /* Cor do texto (caso exista texto sobre as imagens) */
+    font-size: 22px; 
+    /* Tamanho do texto */
+    overflow: hidden; 
+    /* 🔑 ESCONDE o excesso das imagens que ficam fora da área visível
+       → essencial para o efeito de slide */
+    position: relative; 
+    /* Permite posicionar elementos internos com position:absolute,
+       como botões ou textos sobre o carrossel */
+
+    box-shadow: 0px 0px 20px 20px #6666664b
+}
+
+
+
+.carousel-track {
+    display: flex; 
+    /* Coloca as imagens uma ao lado da outra (horizontalmente) */
+    height: 100%; 
+    /* Ocupa toda a altura da Card1 */
+    width: 100%; 
+    /* Ocupa toda a largura da Card1 */
+    animation: slide 5s infinite; 
+    /* Aplica a animação chamada "slide"
+       - 5s = duração
+       - infinite = repete para sempre */
+}
+
+.carousel-track img {
+    min-width: 100%; 
+    /* Cada imagem ocupa 100% da largura do carrossel
+       → garante que cada slide tenha o mesmo tamanho */
+    height: 100%; 
+    /* Imagem ocupa toda a altura do container */
+    object-fit: cover; 
+    /* Ajusta a imagem sem distorcer
+       - Preenche todo o espaço
+       - Pode cortar um pouco das bordas */
+}
+
+/* animação */
+@keyframes slide {
+    0%   { transform: translateX(0); }
+    30%  { transform: translateX(0); }
+    /*Começa mostrando os Primerios slides fica pasara por um tempo efetivo de pausa
+    a porcentagem da lasrgura da imagem e a locomoção da mesma */
+
+    35%  { transform: translateX(-100%); }
+    65%  { transform: translateX(-100%); }
+
+    70%  { transform: translateX(-200%); }
+    100% { transform: translateX(-200%); }
+}
+
+/* CATEGORIAS */
+.cat {
+    margin: 50px 0 10px;
+    font-size: 22px;
+    margin-top: 40px;
+}
+
+/* LISTA DE FILTROS */
+.B {
+    margin-bottom: 20px;
+}
+
+.Tipos {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.Tipos button {
+    background-color: var(--preto);
+    color: var(--branco);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* BARRA DE PESQUISA */
+.Pesquisa {
+    margin-top: 30px;
+    background-color: var(--amarelo);
+    padding: 15px 20px;
+    border-radius: 0 25px 25px 0; /* arredonda só o lado direito */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 40px;
+    margin-left: -35px;
+    width: 1050px ; /* fica do tamanho do conteúdo */
+}
+
+.Pesquisa button {
+    background-color: var(--preto);
+    color: var(--branco);
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* CARDS DE CATEGORIA */
+.l {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 80px;
+    margin-bottom: 200px;
+    overflow: hidden;
+    border-radius: 6px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.l div {
+    background-color: var(--cinza);
+    border-radius: 6px;
+    overflow: hidden;
+    text-align: center;
+}
+
+
+.l h2 {
+    padding: 10px;
+    font-size: 18px;
+    background-color: rgba(0,0,0,0.6);
+    color: var(--branco);
+}
+
+.l img {
+    width: 100%;
+    height: 200px;              
+    display: flex;              
+    align-items: center;        
+    justify-content: center;    
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+@media (max-width: 1224px) {
+    
+}
+ 
+@media (max-width: 768px) {
+  header { flex-direction: column; gap: 15px; }
+  .Card1 {flex-direction: column; gap: 15px; }
+  
+}
