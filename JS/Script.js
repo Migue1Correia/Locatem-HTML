@@ -1,9 +1,12 @@
 
+console.log("Script carregado!"); console.log(document.getElementById("btnCadastrar"));
+
+
 const camponome = document.getElementById("nome"); // Obtém o elemento do campo de nome pelo ID
 const campoemail = document.getElementById("email"); // Obtém o elemento do campo de email pelo ID
 const camposenha = document.getElementById("senha"); // Obtém o elemento do campo de senha pelo ID
 const campocpf = document.getElementById("cpf"); // Obtém o elemento do campo de CPF pelo ID
-const userList = document.getElementById("userList"); // Obtém o elemento da lista de usuários pelo ID
+
 
 
 const btnCadastrar = document.querySelector("#btnCadastrar"); // Obtém o elemento do botão de cadastro pelo ID

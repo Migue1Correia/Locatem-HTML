@@ -1,5 +1,7 @@
 const campoemail = document.getElementById("email"); // Obtém o elemento do campo de email pelo ID
 const camposenha = document.getElementById("senha"); // Obtém o elemento do campo de senha pelo ID
+
+
 const btnLogin = document.querySelector("#btnLogin"); // Obtém o elemento do botão de login pelo ID
 
 
